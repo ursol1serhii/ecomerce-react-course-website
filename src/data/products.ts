@@ -84,6 +84,6 @@ export function getProducts(): product[] {
   return products;
 }
 
-export function getProductById(id: number) {
+export function getProductById(id: string | undefined) {
   return products.find((p) => p.id === Number(id));
 }
