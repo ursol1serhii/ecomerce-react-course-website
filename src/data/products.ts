@@ -84,7 +84,7 @@ export function getProducts(): product[] {
   return products;
 }
 
-export function getProductById(id: string | undefined): product | null {
+export function getProductById(id: string): product | null {
   if (!id) return null;
 
   return products.find((p) => p.id === id) ?? null;

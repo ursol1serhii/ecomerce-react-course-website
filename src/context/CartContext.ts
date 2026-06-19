@@ -6,10 +6,15 @@ interface cart {
   quantity: number;
 }
 
+interface CartItems extends product {
+  quantity: number;
+}
+
 interface CardContextType {
   cartItems: cart[];
   addToCart(productId: string): void;
-  getCartItemsWithProducts(): product[];
+  getCartItemsWithProducts(): CartItems[];
+  removeItemFromCart(id: string): void;
 }
 
 export const CartContext = createContext<CardContextType>({
@@ -18,4 +23,5 @@ export const CartContext = createContext<CardContextType>({
   getCartItemsWithProducts: () => {
     return [];
   },
+  removeItemFromCart: () => {},
 });
